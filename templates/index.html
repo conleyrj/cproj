@@ -10,29 +10,9 @@
         <div class="px-4 py-3 my-2 text-center">
             <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/azure-icon.svg') }}" alt="Azure Logo" width="192" height="192"/>
             <h1 class="display-6 fw-bold text-primary">Welcome!</h1>            
-          </div>
-        <form method="post" action="{{url_for('hello')}}">
-            <div class="col-md-6 mx-auto text-center">
-                <label class="form-label fw-bold fs-5">Sign up here</label>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
-                  <label for="username">Username: </label>
-                  <input type="text" class="form-control" id="username" name="username" style="max-width: 256px;">
-                </div>        
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
-                  <label for="password">Password: </label>
-                  <input type="text" class="form-control" id="password" name="password" style="max-width: 256px;">
-                </div>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
-                  <label for="email">Email: </label>
-                  <input type="email" class="form-control" id="email" name="email" style="max-width: 256px;">
-                </div>                    
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
-                  <button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Sign Up</button>
-                </div>            
-            </div>
-        </form>
+        </div>
         <div class="px-4 py-3 my-2 text-center">
-          <a href="/login">Already have an account? Log in here
+          <a href="/register" role="button" class="btn btn-primary">Register</a> | <a href="/login" role="button" class="btn btn-primary">Login</a>
         </div>
      </main>      
    </body>

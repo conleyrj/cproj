@@ -1,15 +1,15 @@
 from datetime import datetime, timedelta
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.secret_key = "cloudcomp"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Users.sqlite3'
 SQLALCHEMY_BINDS = {
-        'Households': 'sqlite:///Households.sqlite3',
-        'Products': 'sqlite:///Products.sqlite3',
-        'Transactions': 'sqlite:///Transactions.sqlite3'
+  'Households': 'sqlite:///Households.sqlite3',
+  'Products': 'sqlite:///Products.sqlite3',
+  'Transactions': 'sqlite:///Transactions.sqlite3'
 }
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.permanent_session_lifetime = timedelta(minutes=5)
@@ -115,4 +115,4 @@ def dashboard():
 
 
 if __name__ == '__main__':
-   app.run(debug=True)
+  app.run(debug=True)
