@@ -113,6 +113,10 @@ def login():
 def dashboard():
   return render_template('dashboard.html')
 
+@app.route('/data_pull_10', methods=['GET', 'POST'])
+def data_pull_10():
+  return render_template('data_pull_10.html')
+
 
 if __name__ == '__main__':
   app.run(debug=True)
