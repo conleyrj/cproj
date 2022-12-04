@@ -3,6 +3,7 @@
     <title>Cloud Project - Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <html>
    <body>
@@ -13,24 +14,43 @@
               <span class="navbar-brand mb-0 h1">Dashboard</span>
             </div>
           </nav>   
-          <div class="container-fluid">
+          
+          <div class="container">
             <div class="row">
-              <div class="lg-6">
-                <h2 class="my-5 text-center">Data Pull for HSHD_NUM #10</h2>
+              <div class="col-lg-6 mt-5">
+                <div class="card" style="width: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">Data Pull for HSHD_NUM #10</h5>
+                    <p class="card-text"></p>
+                    <a class="text-center" href="/data_pull_10">Click to view data.</a>
+                  </div>
+                </div>
               </div>
-              <a class="text-center" href="/data_pull_10">Click to view data.</a>
+              <div class="col-lg-6 mt-5">
+                <div class="card" style="width: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">Load Data</h5>
+                    <div class="input-group mb-3">
+                      <input type="file" class="form-control" id="inputGroupFile02">
+                      <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          <div>
-            <h3 class="my-5 text-center">Which demographic factors (e.g. household size, presence of children, income) appear to affect customer engagement?</h3>
-          </div>
-          <div>
-            <h3 class="my-5 text-center">Load Data</h3>
-            <p>Upload here.<p>
-            <div class="input-group mb-3">
-              <input type="file" class="form-control" id="inputGroupFile02">
-              <label class="input-group-text" for="inputGroupFile02">Upload</label>
+            <div class="row">
+              <div class="col-lg-12 mt-5">
+                <div class="card" style="width: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">Which demographic factors (e.g. household size, presence of children, income) appear to affect customer engagement?</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          
         </div>
      </main>      
    </body>
