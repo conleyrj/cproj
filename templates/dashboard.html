@@ -9,18 +9,28 @@
    <body>
      <main>
         <div>
-          <nav class="navbar bg-light">
+          <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <span class="navbar-brand mb-0 h1">Dashboard</span>
+              <a class="navbar-brand" href="/dashboard">Dashboard</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <span class="navbar-text">
+                  Group 5
+                </span>
+              </div>
             </div>
-          </nav>   
+          </nav>
           
           <div class="container">
             <div class="row">
               <div class="col-lg-6 mt-5">
                 <div class="card" style="width: auto;">
                   <div class="card-body">
-                    <h5 class="card-title">Data Pull for HSHD_NUM #10</h5>
+                    <h4 class="card-title">Data Pull for HSHD_NUM #10</h4>
                     <br>
                     <br>
                     <a class="text-center" href="/data_pull_10">Click to view data.</a>
@@ -30,7 +40,7 @@
               <div class="col-lg-6 mt-5">
                 <div class="card" style="width: auto;">
                   <div class="card-body">
-                    <h5 class="card-title">Upload Data</h5>
+                    <h4 class="card-title">Upload Data</h4>
                     <a class="text-center" href="/upload_h">Upload Households CSV</a>
                     <br>
                     <a class="text-center" href="/upload_p">Upload Products CSV</a>
@@ -44,7 +54,7 @@
               <div class="col-lg-12 mt-5">
                 <div class="card" style="width: auto;">
                   <div class="card-body">
-                    <h5 class="card-title">Which demographic factors (e.g. household size, presence of children, income) appear to affect customer engagement?</h5>
+                    <h4 class="card-title">Which demographic factors (e.g. household size, presence of children, income) appear to affect customer engagement?</h4>
                     <p class="card-text">
                       There are several demographic factors that have potential to influence a customer's interaction with the store and product. 
                       For this example, we are examining how demographic factors may show a correlation between a customer's attitude towards 
@@ -57,7 +67,7 @@
                     </p>
                     <br>
                     <div class="text-center">
-                      <img src="/static/images/graph.png" width="50%" class="rounded" alt="...">
+                      <img src="/static/images/graph1.png" width="50%" class="rounded" alt="...">
                     </div>
                     <br>
                     <p>
@@ -66,7 +76,48 @@
                       calculated by using the same queries, but without the filter for organic products. The ratio of organic products purchased 
                       to all products purchased was then calculated for each age-range.
                     </p>
-                
+                    <br>
+                    <div class="text-center">
+                      <img src="/static/images/graph2.png" width="50%" class="rounded" alt="...">
+                    </div>
+                    <br>
+                    <p>
+                      From this normalized view of the data, we can see that the trend previously observed holds true, younger customers are more 
+                      likely to purchase organic products. Now let us examine a similar representation of the data using Income-Range as opposed 
+                      to Age-Range. First, we observe solely organic purchases by the quantity again:
+                    </p>
+                    <br>
+                    <div class="text-center">
+                      <img src="/static/images/graph3.png" width="50%" class="rounded" alt="...">
+                    </div>
+                    <br>
+                    <p>
+                      From this representation without normalization, it appears that those with higher incomes are much more likely to purchase 
+                      organic items, with those in brackets of 75-99k and 150k+ purchasing around three times the amount of organic products than 
+                      the lower two income brackets. We also believe it is interesting to display the intermediate data visualization of all 
+                      products purchased by income range, as it seems there is not much difference in the amount of products purchased based on income:
+                    </p>
+                    <br>
+                    <div class="text-center">
+                      <img src="/static/images/graph4.png" width="50%" class="rounded" alt="...">
+                    </div>
+                    <br>
+                    <p>
+                      And now for the final step using these values to normalize the ratio of organic purchases:
+                    </p>
+                    <br>
+                    <div class="text-center">
+                      <img src="/static/images/graph5.png" width="50%" class="rounded" alt="...">
+                    </div>
+                    <br>
+                    <p>
+                      As we can see, there is practically no change in the appearance of the bar graph due to the count of all item purchases by income 
+                      being so similar to one another. This leads to an interesting conclusion that households with higher income don't actually purchase 
+                      more, rather they purchase more organic products, again at nearly a 3 to 1 rations between the higher and lower ends of the income 
+                      range. Organic products are typically more expensive than non-organic products, so households with more disposable income are able to 
+                      make these purchases whereas lower income households don't have the ability to. Perhaps marketing of these products should primarily 
+                      be aimed at those making over $75,000 since that is the range where there is a significant spike in the number of organic purchases. 
+                    </p>
                   </div>
                 </div>
               </div>
