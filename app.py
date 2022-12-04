@@ -114,6 +114,10 @@ def login():
 def dashboard():
   return render_template('dashboard.html')
 
+@app.route('/notebook', methods=['GET', 'POST'])
+def notebook():
+  return render_template('notebook.html')
+
 @app.route('/data_pull_10', methods=['GET', 'POST'])
 def data_pull_10():
   return render_template('data_pull_10.html')
