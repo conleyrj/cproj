@@ -1,10 +1,8 @@
-from datetime import datetime, timedelta
-import os
-from flask import Flask, render_template, request, redirect, url_for, request
+from datetime import timedelta
+from flask import Flask, render_template, request, redirect, url_for, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 import pandas as pd
-import csv
 
 app = Flask(__name__)
 app.secret_key = "cloudcomp"
@@ -157,6 +155,6 @@ def upload_t():
     return render_template('upload_t.html', tables=[data.to_html(table_id='myTable')], titles=[''])
   return render_template('upload_t.html')
 
-
 if __name__ == '__main__':
+  db.create_all()
   app.run(debug=True)
