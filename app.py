@@ -1,7 +1,10 @@
 from datetime import datetime, timedelta
 import os
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.utils import secure_filename
+import pandas as pd
+import csv
 
 app = Flask(__name__)
 app.secret_key = "cloudcomp"
@@ -120,6 +123,39 @@ def data_pull_10():
 @app.route('/data_pull_all', methods=['GET', 'POST'])
 def data_pull_all():
   return render_template('data_pull_all.html')
+
+@app.route('/upload_h', methods=['GET', 'POST'])
+def upload_h():
+  if request.method == 'POST':
+    f = request.files['file']
+    f.save(secure_filename(f.filename))
+    df = pd.read_csv(f.filename)
+    df.to_csv(f.filename, index=None)
+    data = pd.read_csv(f.filename)
+    return render_template('upload_h.html', tables=[data.to_html()], titles=[''])
+  return render_template('upload_h.html')
+
+@app.route('/upload_p', methods=['GET', 'POST'])
+def upload_p():
+  if request.method == 'POST':
+    f = request.files['file']
+    f.save(secure_filename(f.filename))
+    df = pd.read_csv(f.filename)
+    df.to_csv(f.filename, index=None)
+    data = pd.read_csv(f.filename)
+    return render_template('upload_p.html', tables=[data.to_html()], titles=[''])
+  return render_template('upload_p.html')
+
+@app.route('/upload_t', methods=['GET', 'POST'])
+def upload_t():
+  if request.method == 'POST':
+    f = request.files['file']
+    f.save(secure_filename(f.filename))
+    df = pd.read_csv(f.filename)
+    df.to_csv(f.filename, index=None)
+    data = pd.read_csv(f.filename)
+    return render_template('upload_t.html', tables=[data.to_html()], titles=[''])
+  return render_template('upload_t.html')
 
 
 if __name__ == '__main__':
