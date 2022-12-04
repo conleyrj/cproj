@@ -45,8 +45,28 @@
                 <div class="card" style="width: auto;">
                   <div class="card-body">
                     <h5 class="card-title">Which demographic factors (e.g. household size, presence of children, income) appear to affect customer engagement?</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text">
+                      There are several demographic factors that have potential to influence a customer's interaction with the store and product. 
+                      For this example, we are examining how demographic factors may show a correlation between a customer's attitude towards 
+                      products with an organic label, marked by the NATURAL_ORGANIC_FLAG. The demographic factors we have chosen to focus on are 
+                      age and income range, marked by the AGE_RANGE and INCOME_RANGE attributes respectively. We ignored null values for these 
+                      attributes because they could represent any age or income range.
+                      For the purpose of simplicity, we are choosing to examine these attributes separately from one another, first let us look 
+                      at a customer's age. Counts of products with a value of 'Y' for the organic flag were grouped by age range and then averaged. 
+                      From the following visual representation of these results, it appears that younger households purchase more organic product. 
+                    </p>
+                    <br>
+                    <div class="text-center">
+                      <img src="/static/images/graph.png" width="50%" class="rounded" alt="...">
+                    </div>
+                    <br>
+                    <p>
+                      But it is important to consider that younger households could be larger in size, and generally just tend to purchase more 
+                      products of all types because there are more people. To normalize this data, the number of all products purchased was all 
+                      calculated by using the same queries, but without the filter for organic products. The ratio of organic products purchased 
+                      to all products purchased was then calculated for each age-range.
+                    </p>
+                
                   </div>
                 </div>
               </div>
