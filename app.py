@@ -132,7 +132,7 @@ def upload_h():
     df = pd.read_csv(f.filename)
     df.to_csv(f.filename, index=None)
     data = pd.read_csv(f.filename)
-    return render_template('upload_h.html', tables=[data.to_html()], titles=[''])
+    return render_template('upload_h.html', tables=[data.to_html(table_id='myTable')], titles=[''])
   return render_template('upload_h.html')
 
 @app.route('/upload_p', methods=['GET', 'POST'])
@@ -143,7 +143,7 @@ def upload_p():
     df = pd.read_csv(f.filename)
     df.to_csv(f.filename, index=None)
     data = pd.read_csv(f.filename)
-    return render_template('upload_p.html', tables=[data.to_html()], titles=[''])
+    return render_template('upload_p.html', tables=[data.to_html(table_id='myTable')], titles=[''])
   return render_template('upload_p.html')
 
 @app.route('/upload_t', methods=['GET', 'POST'])
@@ -154,7 +154,7 @@ def upload_t():
     df = pd.read_csv(f.filename)
     df.to_csv(f.filename, index=None)
     data = pd.read_csv(f.filename)
-    return render_template('upload_t.html', tables=[data.to_html()], titles=[''])
+    return render_template('upload_t.html', tables=[data.to_html(table_id='myTable')], titles=[''])
   return render_template('upload_t.html')
 
 

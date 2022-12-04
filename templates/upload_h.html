@@ -34,20 +34,20 @@
               
             </div>
           </div>
-
-          <table>
-            <h1>
-            <!--Displaying the converted table-->
-                 {% for table in tables %}
-                <h2>{{titles[loop.index]}}</h2>                            
-                {{ table|safe }}
-                {% endfor %}     
-            </h1> 
-          </table>
+  
+          <!--Displaying the converted table-->
+          {% for table in tables %}
+            {{ table|safe }}
+          {% endfor %}     
 
         </div>
      </main>  
 
+    <script>
+      $(document).ready( function () {
+        $('#myTable').DataTable();
+      } );
+    </script>
 
    </body>
 </html>
