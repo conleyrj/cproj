@@ -117,6 +117,10 @@ def dashboard():
 def data_pull_10():
   return render_template('data_pull_10.html')
 
+@app.route('/data_pull_all', methods=['GET', 'POST'])
+def data_pull_all():
+  return render_template('data_pull_all.html')
+
 
 if __name__ == '__main__':
   app.run(debug=True)

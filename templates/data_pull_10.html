@@ -1,9 +1,13 @@
 <!doctype html>
 <head>
-    <title>Cloud Project - Data Pull</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <title>Cloud Project - Data Pull</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+  <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 <html>
@@ -14,455 +18,451 @@
       </div>
     </nav> 
     <h2 class="my-5 text-center">Data Pull for HSHD_NUM #10</h2>
+    <p class="text-center"><a class="text-center" href="/data_pull_all">See all data</a></p>
     <div class="row">
       <div class="col-lg-12 px-5">
         <a class="btn btn-primary my-2" href="/dashboard" role="button">Back</a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-12 px-5 py-3">
-        <input class="form-control" id="myInput" type="text" placeholder="Search..">
-        <br>
-        <table width="100%" class="table table-striped">
-          <small>*Data is based on 400 households, 67284, 12,000 transactions
-          <thead class="table-light">
-            <tr>
-              <th>hshd_num</th>
-              <th>basket_num</th>
-              <th>purchase</th>
-              <th>department</th>
-              <th>commodity</th>
-              <th>spend</th>
-              <th>units</th>
-              <th>store_r</th>
-              <th>week_num</th>
-              <th>year</th>
-              <th>l</th>
-              <th>age_range</th>
-              <th>marital</th>
-              <th>income_range</th>
-              <th>homeowner</th>
-              <th>hshd_composition</th>
-              <th>hh_size</th>
-              <th>children</th>
-            </tr>
-          </thead>
-          <tbody id="myTable">
-            <tr>
-              <td>10</td>
-              <td>515</td>
-              <td>2018-08-21</td>
-              <td>NON-FOOD</td>
-              <td>TOBACCO PRODUCTS</td>
-              <td>7.44</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>33</td>
-              <td>2018</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>1875</td>
-              <td>2018-09-01</td>
-              <td>FOOD</td>
-              <td>BEVERAGE - NON WATER</td>
-              <td>5.49</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>34</td>
-              <td>2018</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>7957</td>
-              <td>2018-10-20</td>
-              <td>FOOD</td>
-              <td>DRY GOODS</td>
-              <td>2.69</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>41</td>
-              <td>2018</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>7957</td>
-              <td>2018-10-20</td>
-              <td>FOOD</td>
-              <td>GROCERY STAPLE</td>
-              <td>1.79</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>41</td>
-              <td>2018</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null </td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>18502</td>
-              <td>2019-01-14</td>
-              <td>FOOD</td>
-              <td>GROCERY STAPLE</td>
-              <td>2</td>
-              <td>2</td>
-              <td>EAST</td>
-              <td>2</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>18502</td>
-              <td>2019-01-14</td>
-              <td>FOOD</td>
-              <td>IN STORE FOOD SERVICE</td>
-              <td>1.49</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>2</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K </td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>19026</td>
-              <td>2019-01-17</td>
-              <td>FOOD</td>
-              <td>GROCERY STAPLE</td>
-              <td>2.99</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>2</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>22001</td>
-              <td>2019-02-11</td>
-              <td>FOOD</td>
-              <td>GROCERY STAPLE</td>
-              <td>2.59</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>6</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>22001</td>
-              <td>2019-02-11</td>
-              <td>FOOD</td>
-              <td>GROCERY STAPLE</td>
-              <td>2.99</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>6</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>22001</td>
-              <td>2019-02-11 </td>
-              <td>FOOD</td>
-              <td>IN STORE FOOD SERVICE</td>
-              <td>1.67</td>
-              <td>1 </td>
-              <td>EAST</td>
-              <td>6</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>25063</td>
-              <td>2019-03-09</td>
-              <td>NON-FOOD</td>
-              <td>HOUSEHOLD</td>
-              <td>2.69</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>9</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>27806</td>
-              <td>2019-04-01</td>
-              <td>PHARMA</td>
-              <td>MEDICATION</td>
-              <td>14.49</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>13</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>30858</td>
-              <td>2019-04-26</td>
-              <td>FOOD</td>
-              <td>BAKERY</td>
-              <td>1.99</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>16</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>30858</td>
-              <td>2019-04-26</td>
-              <td>FOOD</td>
-              <td>PRODUCE</td>
-              <td>1.49</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>16</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>36453</td>
-              <td>2019-06-09</td>
-              <td>NON-FOOD</td>
-              <td>HOUSEHOLD</td>
-              <td>2.69</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>23</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>38611</td>
-              <td>2019-06-27</td>
-              <td>FOOD</td>
-              <td>MEAT - OTHER</td>
-              <td>10.99</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>25</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>48868</td>
-              <td>2019-09-21</td>
-              <td>FOOD</td>
-              <td>BEVERAGE - NON WATER</td>
-              <td>5.49</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>37</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>49789</td>
-              <td>2019-09-28</td>
-              <td>FOOD</td>
-              <td>DAIRY</td>
-              <td>2.79</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>38</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>51534</td>
-              <td>2019-10-14</td>
-              <td>NON-FOOD</td>
-              <td>HOUSEHOLD</td>
-              <td>1.99</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>41</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>52004</td>
-              <td>2019-10-18</td>
-              <td>NON-FOOD</td>
-              <td>PET</td>
-              <td>13.49</td>
-              <td>1</td>
-              <td>EAST</td>
-              <td>41</td>
-              <td>2019</td>
-              <td>True</td>
-              <td>45-54</td>
-              <td>Single</td>
-              <td>35-49K</td>
-              <td><br></td>
-              <td>1 Adult</td>
-              <td>1</td>
-              <td>null</td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col-lg-12 px-3 py-3">
+          <table width="80%" class="table table-striped" id="myTable">
+            <small>*Data is based on 400 households, 67284, 12,000 transactions
+            <thead class="table-light">
+              <tr>
+                <th>hshd_num</th>
+                <th>basket_num</th>
+                <th>purchase</th>
+                <th>department</th>
+                <th>commodity</th>
+                <th>spend</th>
+                <th>units</th>
+                <th>store_r</th>
+                <th>week_num</th>
+                <th>year</th>
+                <th>l</th>
+                <th>age_range</th>
+                <th>marital</th>
+                <th>income_range</th>
+                <th>homeowner</th>
+                <th>hshd_composition</th>
+                <th>hh_size</th>
+                <th>children</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10</td>
+                <td>515</td>
+                <td>2018-08-21</td>
+                <td>NON-FOOD</td>
+                <td>TOBACCO PRODUCTS</td>
+                <td>7.44</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>33</td>
+                <td>2018</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>1875</td>
+                <td>2018-09-01</td>
+                <td>FOOD</td>
+                <td>BEVERAGE - NON WATER</td>
+                <td>5.49</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>34</td>
+                <td>2018</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>7957</td>
+                <td>2018-10-20</td>
+                <td>FOOD</td>
+                <td>DRY GOODS</td>
+                <td>2.69</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>41</td>
+                <td>2018</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>7957</td>
+                <td>2018-10-20</td>
+                <td>FOOD</td>
+                <td>GROCERY STAPLE</td>
+                <td>1.79</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>41</td>
+                <td>2018</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>18502</td>
+                <td>2019-01-14</td>
+                <td>FOOD</td>
+                <td>GROCERY STAPLE</td>
+                <td>2</td>
+                <td>2</td>
+                <td>EAST</td>
+                <td>2</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>18502</td>
+                <td>2019-01-14</td>
+                <td>FOOD</td>
+                <td>IN STORE FOOD SERVICE</td>
+                <td>1.49</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>2</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K </td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>19026</td>
+                <td>2019-01-17</td>
+                <td>FOOD</td>
+                <td>GROCERY STAPLE</td>
+                <td>2.99</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>2</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>22001</td>
+                <td>2019-02-11</td>
+                <td>FOOD</td>
+                <td>GROCERY STAPLE</td>
+                <td>2.59</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>6</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>22001</td>
+                <td>2019-02-11</td>
+                <td>FOOD</td>
+                <td>GROCERY STAPLE</td>
+                <td>2.99</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>6</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>22001</td>
+                <td>2019-02-11 </td>
+                <td>FOOD</td>
+                <td>IN STORE FOOD SERVICE</td>
+                <td>1.67</td>
+                <td>1 </td>
+                <td>EAST</td>
+                <td>6</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>25063</td>
+                <td>2019-03-09</td>
+                <td>NON-FOOD</td>
+                <td>HOUSEHOLD</td>
+                <td>2.69</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>9</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>27806</td>
+                <td>2019-04-01</td>
+                <td>PHARMA</td>
+                <td>MEDICATION</td>
+                <td>14.49</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>13</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>30858</td>
+                <td>2019-04-26</td>
+                <td>FOOD</td>
+                <td>BAKERY</td>
+                <td>1.99</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>16</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>30858</td>
+                <td>2019-04-26</td>
+                <td>FOOD</td>
+                <td>PRODUCE</td>
+                <td>1.49</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>16</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>36453</td>
+                <td>2019-06-09</td>
+                <td>NON-FOOD</td>
+                <td>HOUSEHOLD</td>
+                <td>2.69</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>23</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>38611</td>
+                <td>2019-06-27</td>
+                <td>FOOD</td>
+                <td>MEAT - OTHER</td>
+                <td>10.99</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>25</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>48868</td>
+                <td>2019-09-21</td>
+                <td>FOOD</td>
+                <td>BEVERAGE - NON WATER</td>
+                <td>5.49</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>37</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>49789</td>
+                <td>2019-09-28</td>
+                <td>FOOD</td>
+                <td>DAIRY</td>
+                <td>2.79</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>38</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>51534</td>
+                <td>2019-10-14</td>
+                <td>NON-FOOD</td>
+                <td>HOUSEHOLD</td>
+                <td>1.99</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>41</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>52004</td>
+                <td>2019-10-18</td>
+                <td>NON-FOOD</td>
+                <td>PET</td>
+                <td>13.49</td>
+                <td>1</td>
+                <td>EAST</td>
+                <td>41</td>
+                <td>2019</td>
+                <td>True</td>
+                <td>45-54</td>
+                <td>Single</td>
+                <td>35-49K</td>
+                <td>Homeowner</td>
+                <td>1 Adult</td>
+                <td>1</td>
+                <td>null</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    <!-- </div> -->
 
     <script>
-      $(document).ready(function(){
-        $("#myInput").on("keyup", function() {
-          var value = $(this).val().toLowerCase();
-          $("#myTable tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-          });
-        });
-      });
-      </script>
+      $(document).ready( function () {
+        $('#myTable').DataTable();
+      } );
+    </script>
 
 
   </body>
